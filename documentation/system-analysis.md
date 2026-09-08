@@ -1,0 +1,1 @@
+The university's ICT office struggles to track technical support requests because they arrive unorganized through verbal, text, and social channels, resulting in forgotten or poorly monitored concerns. The new web-based Service Request Management System will centralize these requests, ensuring authorized personnel can efficiently record, track, and resolve technical issues.
