@@ -2,8 +2,8 @@ SAD Service Request Management System
 
 Student Name: James Albert R. Abasula  
 Course & Section: System Analysis and Design  
-Repository URL: https://github.com/YOUR_GITHUB_USERNAME/SAD-ServiceRequest-Abasula  
-Live Application: https://YOUR_GITHUB_USERNAME.github.io/SAD-ServiceRequest-Abasula/  
+Repository URL: [https://github.com/YOUR_GITHUB_USERNAME/SAD-ServiceRequest-Abasula](https://github.com/abasulajamesalbert-spec/SAD-ServiceRequest-Abasula)  
+Live Application: [https://YOUR_GITHUB_USERNAME.github.io/SAD-ServiceRequest-Abasula/ ](https://abasulajamesalbert-spec.github.io/SAD-ServiceRequest-Abasula/) 
 
 
 1. Problem Statement
