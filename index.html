@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ICT Service Request Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    <h2>ICT Service Request System</h2>
+
+    <!-- Dashboard Metrics -->
+    <div class="dashboard">
+      <div class="card"><h3>Total Requests</h3><p id="cnt-total">0</p></div>
+      <div class="card"><h3>Pending</h3><p id="cnt-pending">0</p></div>
+      <div class="card"><h3>In Progress</h3><p id="cnt-progress">0</p></div>
+      <div class="card"><h3>Completed</h3><p id="cnt-completed">0</p></div>
+    </div>
+
+    <!-- Request Form -->
+    <form id="requestForm" onsubmit="saveRequest(event)">
+      <input type="hidden" id="req-id">
+      <input type="text" id="requester_name" placeholder="Requester Name" required>
+      <input type="text" id="department" placeholder="Department" required>
+      <select id="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="Computer repair">Computer repair</option>
+        <option value="Software installation">Software installation</option>
+        <option value="Network problem">Network problem</option>
+        <option value="Printer problem">Printer problem</option>
+        <option value="Account concern">Account concern</option>
+      </select>
+      <select id="priority" required>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <select id="status">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <textarea id="description" placeholder="Description of problem" required></textarea>
+      <button type="submit" id="btn-save">Submit Request</button>
+    </form>
+
+    <!-- Search & Filter Controls -->
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search Requester or Description" oninput="loadRequests()">
+      <select id="filter-status" onchange="loadRequests()">
+        <option value="All">All Statuses</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <select id="filter-priority" onchange="loadRequests()">
+        <option value="All">All Priorities</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+
+    <!-- Data Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Requester</th>
+          <th>Dept</th>
+          <th>Category</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="requests-table"></tbody>
+    </table>
+  </div>
+</body>
+</html>
